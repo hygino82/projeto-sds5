@@ -17,34 +17,21 @@ import lombok.Setter;
 
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 @Entity
 @Table(name = "tb_sales")
 public class Sale {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Getter
-	@Setter
 	private Long id;
 
-	@Getter
-	@Setter
 	private Integer visited;
-
-	@Getter
-	@Setter
 	private Integer deals;
-
-	@Getter
-	@Setter
 	private Double amount;
-
-	@Getter
-	@Setter
 	private LocalDate date;
 
-	@Getter
-	@Setter
 	@ManyToOne
 	@JoinColumn(name = "seller_id")
 	private Seller seller;
